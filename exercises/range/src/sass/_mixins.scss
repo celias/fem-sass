@@ -2,6 +2,12 @@
     &::-moz-range-thumb {
         @content;
     }
+}
+
+@mixin range-thumb2 {
+    &::-webkit-slider-thumb {
+        @content;
+    }
 
     &::-ms-thumb {
         @content;

@@ -5,9 +5,11 @@ input[type=range] {
     -webkit-appearance: none;
     margin: 18px 0;
     width: 100%;
+
     &:focus {
         outline: none;
     }
+
     @include range-track {
         width: 100%;
         height: 8.4px;
@@ -19,7 +21,8 @@ input[type=range] {
         border: $range_small_border;
     }
 
-    &::-webkit-slider-thumb {
+
+    @include range-thumb2 {
         box-shadow: $range_shadow;
         border: 1px solid #000000;
         height: 36px;
@@ -30,11 +33,13 @@ input[type=range] {
         -webkit-appearance: none;
         margin-top: -14px;
     }
+
+
     &:focus::-webkit-slider-runnable-track {
         background: $lightblue;
     }
 
-    @include range-thumb() {
+    @include range-thumb {
         width: 100px;
         height: 8.4px;
         cursor: pointer;
@@ -43,26 +48,20 @@ input[type=range] {
         border-color: transparent;
         border-width: 16px 0;
     }
+
+
     &::-ms-fill-lower {
         background: #2a6495;
         border: 0.2px solid #010101;
         border-radius: 2.6px;
         box-shadow: $range_shadow;
     }
+
     &::-ms-fill-upper {
         background: $darkblue;
         border: $range_small_border;
         border-radius: 2.6px;
         box-shadow: $range_shadow;
-    }
-    &::-ms-thumb {
-      box-shadow: $range_shadow;
-      border: 1px solid #000000;
-      height: 36px;
-      width: 16px;
-      border-radius: 3px;
-      background: #ffffff;
-      cursor: pointer;
     }
 
     &:focus::-ms-fill-lower {
